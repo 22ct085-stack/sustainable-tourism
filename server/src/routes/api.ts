@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import { nearby, recommendations, weather, locationSearch } from '../controllers/apiController';
+import { walkingRoute } from '../controllers/routeController';
+const router = Router();
+router.get('/health', (_req, res) => res.json({ status: 'ok', service: 'S-CADE Sustainable Tourism API' }));
+router.get('/places/nearby', nearby);
+router.get('/recommendations', recommendations);
+router.get('/weather', weather);
+router.get('/places/search', locationSearch);
+router.get('/routes/walking', walkingRoute);
+export default router;

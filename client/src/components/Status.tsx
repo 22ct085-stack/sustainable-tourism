@@ -1,0 +1,3 @@
+import { LoaderCircle, RefreshCw, TriangleAlert } from 'lucide-react';
+export function LoadingStatus() { return <div className="status-box"><LoaderCircle className="spin" size={28}/><strong>Finding the best places for you...</strong><span>Checking nearby attractions and local conditions.</span></div>; }
+export function ErrorStatus({ message, retry }: { message: string; retry: () => void }) { return <div className="status-box error-status"><TriangleAlert size={27}/><strong>We couldn’t load recommendations</strong><span>{message}</span><button className="button button-dark" onClick={retry}><RefreshCw size={15}/>Try again</button></div>; }

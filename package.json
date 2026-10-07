@@ -1,0 +1,14 @@
+{
+  "name": "scade",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently -n API,WEB -c green,cyan \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "build": "npm run build --workspace server && npm run build --workspace client",
+    "start": "npm start --workspace server",
+    "install:all": "npm install"
+  },
+  "overrides": { "shell-quote": "^1.11.0" },
+  "devDependencies": { "concurrently": "^9.2.1" }
+}
